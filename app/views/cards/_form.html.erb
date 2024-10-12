@@ -1,0 +1,45 @@
+<%= form_with model: card do |form| %>
+    <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+        <% card.errors.full_messages_for(:name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :set %><br>
+        <%= form.text_field :set %>
+        <% card.errors.full_messages_for(:set).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :cardnum %><br>
+        <%= form.number_field :cardnum %>
+        <% card.errors.full_messages_for(:cardnum).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :quantity %><br>
+        <%= form.number_field :quantity %>
+        <% card.errors.full_messages_for(:quantity).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :image %><br>
+        <%= form.text_field :image %>
+        <% card.errors.full_messages_for(:image).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

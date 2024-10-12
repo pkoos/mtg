@@ -1,0 +1,11 @@
+<h1>Cards</h1>
+
+<ul>
+    <% @cards.each do |card| %>
+        <li>
+            <%= link_to card.name, card %>
+        </li>
+    <% end %>
+</ul>
+
+<%= link_to "New Card", new_card_path %>

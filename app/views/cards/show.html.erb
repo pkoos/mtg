@@ -1,0 +1,13 @@
+<h1><%= @card.name %></h1>
+
+<p><%= @card.set %>(<%= @card.cardnum %>) </p>
+<p>Owned: <%= @card.quantity %> </p>
+<img src="<%=@card.image%>">
+
+<ul>
+    <li><%= link_to "Edit", edit_card_path(@card) %></li>
+    <li><%= link_to "Destroy", card_path(@card), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+    } %></li>
+</ul>
