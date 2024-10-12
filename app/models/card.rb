@@ -1,4 +1,6 @@
 class Card < ApplicationRecord
+  has_many :decks
+
   validates :name, presence: true
   validates :set, presence: true, length: { maximum: 3 }
   validates :cardnum, presence: true

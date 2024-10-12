@@ -11,3 +11,28 @@
         turbo_confirm: "Are you sure?"
     } %></li>
 </ul>
+
+<h2>Current Decks:</h2>
+<% @card.decks.each do |deck| %>
+    <p>
+        <strong>Deck:</strong>
+        <%= deck.name %>
+        <strong>Power Level:</strong>
+        <%= deck.power_level %>
+    </p>
+<% end %>
+
+<h2>Add to deck:</h2>
+<%= form_with model: [@card, @card.decks.build ] do |form| %>
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </p>
+    <p>
+        <%= form.label :power_level %><br>
+        <%= form.number_field :power_level %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
