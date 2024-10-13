@@ -1,10 +1,14 @@
 <h1>Cards</h1>
 
+Our collection has <%= Card.public_count %> cards and counting!
+
 <ul>
     <% @cards.each do |card| %>
-        <li>
-            <%= link_to card.name, card %>
-        </li>
+        <% unless card.archived? %>
+            <li>
+                <%= link_to card.name, card %>
+            </li>
+        <% end %>
     <% end %>
 </ul>
 

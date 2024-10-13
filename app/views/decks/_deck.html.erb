@@ -1,0 +1,15 @@
+<% unless deck.archived? %>
+    <p>
+        <strong>Deck:</strong>
+        <%= deck.name %>
+        <strong>Power Level:</strong>
+        <%= deck.power_level %>
+    </p>
+
+    <p>
+        <%= link_to "Destroy Deck", [ deck.card, deck ], data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        } %>
+    </p>
+<% end %>

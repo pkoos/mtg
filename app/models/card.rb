@@ -1,5 +1,7 @@
 class Card < ApplicationRecord
-  has_many :decks
+  include Visible
+
+  has_many :decks, dependent: :destroy
 
   validates :name, presence: true
   validates :set, presence: true, length: { maximum: 3 }

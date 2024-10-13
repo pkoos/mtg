@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  http_basic_authenticate_with name: "pmk", password: "secret", except: [:index, :show]
+
   def index
     @cards = Card.all
   end
@@ -43,6 +45,6 @@ class CardsController < ApplicationController
   end
   private
     def card_params
-      params.require(:card).permit(:name, :set, :cardnum, :quantity, :image)
+      params.require(:card).permit(:name, :set, :cardnum, :quantity, :image, :status)
     end
 end
